@@ -1,5 +1,6 @@
 <?php
 return [
+    'timeZone' => 'Asia/Shanghai',
     'vendorPath' => '@project/vendor',
     'components' => [
         'cache' => [
