@@ -9,6 +9,7 @@
 namespace console\controllers;
 
 
+use common\models\tables\Test;
 use mult1mate\crontab\DbHelper;
 use yii\console\Controller;
 use yii\helpers\FileHelper;
@@ -26,11 +27,11 @@ class TestController extends Controller
         $cronTab = new CronTab();
         $cronTab->setJobs([
             [
-                'line' => '* * * * *  php /var/www/testY2/yii test'
+                'line' => '* * * * *  php '.\Yii::getAlias('@project').'/yii test'
             ],
         ]);
         $cronTab->apply();
-        $cronTab->removeAll();
+//        $cronTab->removeAll();
 //        $jobs = $cronTab->getJobs();
 //        var_dump($jobs);
     }
@@ -41,4 +42,16 @@ class TestController extends Controller
         echo DbHelper::tableTaskRunsSql().";\n";
         echo DbHelper::getReportSql().";\n";
     }
+
+    public function actionTest2()
+    {
+        $test = Test::findOne(['id'=>1]);
+//        var_dump($test);
+//        $test = new Test();
+        $test->name = "time_".time();
+        $test->save();
+    }
+
+    public function actionTest3()
+    {}
 }

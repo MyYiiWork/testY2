@@ -42,4 +42,9 @@ class Test extends \yii\db\ActiveRecord
             'name' => 'Name',
         ];
     }
+
+    public function afterSave($insert, $changedAttributes)
+    {
+        var_dump($changedAttributes);
+    }
 }
