@@ -12,6 +12,16 @@ $this->title = 'My Yii Application';
         <p class="lead">You have successfully created your Yii-powered application.</p>
 
         <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+        <p>
+            <?php
+            /*$test = new \common\models\tables\Test();
+            $test->name = md5(time());
+            $test->save();*/
+            $x = \common\models\tables\Test::find()->asArray()->all();
+            $x = Yii::$app->db->createCommand("SELECT * FROM `test`;")->queryAll();
+//            var_dump($x[0]['id']);
+            ?>
+        </p>
     </div>
 
     <div class="body-content">
