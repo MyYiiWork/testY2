@@ -53,5 +53,12 @@ class TestController extends Controller
     }
 
     public function actionTest3()
-    {}
+    {
+        /*$ftp = \Yii::$app->phone_recording_source_ftp;
+        $contents = $ftp->listContents();
+        var_dump($contents);*/
+        $sftp = \Yii::$app->local_sftp;
+        $contents = $sftp->listContents();
+        var_dump($contents);
+    }
 }
