@@ -12,6 +12,10 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'modules' =>[
+        'settings' => [
+            'class' => 'pheme\settings\Module',
+            'sourceLanguage' => 'en'
+        ],
         'test' => [
             'class' => \frontend\modules\test\TestModule::className(),
         ],
@@ -49,6 +53,9 @@ return [
             ],
         ],
         */
+        'settings' => [
+            'class' => 'pheme\settings\components\Settings'
+        ],
     ],
     'params' => $params,
 ];

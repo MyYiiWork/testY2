@@ -7,6 +7,8 @@
  */
 ?>
 
+<?=Yii::$app->settings->get('test.k'); ?>
+
 <?php
 echo \wbraganca\videojs\VideoJsWidget::widget([
     'options' => [
