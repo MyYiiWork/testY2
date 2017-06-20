@@ -22,7 +22,8 @@
         "creocoder/yii2-flysystem": "^0.8.1",
         "league/flysystem-sftp": "^1.0",
         "wbraganca/yii2-videojs-widget": "~1.0",
-        "pheme/yii2-settings": "*"
+        "pheme/yii2-settings": "*",
+        "insolita/yii2-migration-generator": "~2.3"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

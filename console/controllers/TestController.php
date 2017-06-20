@@ -61,4 +61,11 @@ class TestController extends Controller
         $contents = $sftp->listContents();
         var_dump($contents);
     }
+
+    public function actionTest4()
+    {
+        $x = \Yii::$app->settings->get('test.k');
+        var_dump($x);
+        var_dump($x);
+    }
 }

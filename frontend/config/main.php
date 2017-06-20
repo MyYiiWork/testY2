@@ -12,10 +12,6 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'modules' =>[
-        'settings' => [
-            'class' => 'pheme\settings\Module',
-            'sourceLanguage' => 'en'
-        ],
         'test' => [
             'class' => \frontend\modules\test\TestModule::className(),
         ],
@@ -25,6 +21,7 @@ return [
             'csrfParam' => '_csrf-frontend',
         ],
         'user' => [
+            'class' => \common\components\rewrite\User::className(),
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
@@ -53,9 +50,6 @@ return [
             ],
         ],
         */
-        'settings' => [
-            'class' => 'pheme\settings\components\Settings'
-        ],
     ],
     'params' => $params,
 ];
