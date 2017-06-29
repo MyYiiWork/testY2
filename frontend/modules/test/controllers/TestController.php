@@ -15,6 +15,7 @@ class TestController extends Controller
 {
     public function actionTest()
     {
+        $user = \Yii::$app->user->identity;
         return $this->render('test');
     }
 }
