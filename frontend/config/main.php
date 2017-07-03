@@ -15,13 +15,16 @@ return [
         'test' => [
             'class' => \frontend\modules\test\TestModule::className(),
         ],
+        'user' => [
+            'class' => \frontend\modules\user\Module::className(),
+        ],
     ],
     'components' => [
         'request' => [
             'csrfParam' => '_csrf-frontend',
         ],
         'user' => [
-            'class' => \common\components\rewrite\User::className(),
+            'class' => \frontend\modules\user\components\User::className(),
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
             'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],

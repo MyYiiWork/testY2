@@ -39,8 +39,14 @@ AppAsset::register($this);
         ['label' => 'Home', 'url' => ['/site/index']],
         ['label' => 'About', 'url' => ['/site/about']],
         ['label' => 'Contact', 'url' => ['/site/contact']],
+        ['label' => 'User', 'url' => ['/user']],
+        Yii::$app->user->isGuest ?
+            ['label' => 'Login', 'url' => ['/user/login']] : // or ['/user/login-email']
+            ['label' => 'Logout (' . Yii::$app->user->displayName . ')',
+                'url' => ['/user/logout'],
+                'linkOptions' => ['data-method' => 'post']],
     ];
-    if (Yii::$app->user->isGuest) {
+   /* if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Signup', 'url' => ['/site/signup']];
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
     } else {
@@ -52,7 +58,7 @@ AppAsset::register($this);
             )
             . Html::endForm()
             . '</li>';
-    }
+    }*/
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'items' => $menuItems,
