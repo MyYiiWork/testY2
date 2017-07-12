@@ -210,4 +210,10 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+    public function actionTest()
+    {
+//        echo 123456;exit;
+        return $this->render('test');
+    }
 }
