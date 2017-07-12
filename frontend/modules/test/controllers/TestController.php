@@ -18,4 +18,17 @@ class TestController extends Controller
         $user = \Yii::$app->user->identity;
         return $this->render('test');
     }
+
+    public function actionTest1()
+    {
+        $dir = \Yii::getAlias('@data/vedio/test');
+        $o_file = $dir."/test.avi";
+        $n_file = $dir."/test.webm";
+        $cmd = "ffmpeg -i {$o_file} {$n_file}";
+        $str = exec($cmd, $out, $arr);
+        var_dump($cmd);
+        var_dump($str);
+        var_dump($out);
+        var_dump($arr);
+    }
 }
